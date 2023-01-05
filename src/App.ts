@@ -40,8 +40,6 @@ export class App implements IApp {
 		const light = new DirectionalLight(0xffffff);
 		light.position.set(position.x, position.y, position.z);
 		light.castShadow = true;
-		const lightHelp = new DirectionalLightHelper(light);
-		this._scene.add(lightHelp);
 		this._scene.add(light);
 	}
 

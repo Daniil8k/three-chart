@@ -12,10 +12,8 @@ init();
 
 function init() {
 	const app = new App();
-	const axesHelper = new AxesHelper(5);
 	app.setLight({ x: 4, y: 6, z: 2 });
 	app.setLight({ x: -4, y: 6, z: -2 });
-	app.scene.add(axesHelper);
 
 	const socketListener = initSocketListener(app);
 	startBinanceWebSocket(socketListener);

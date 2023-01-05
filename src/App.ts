@@ -11,7 +11,7 @@ export class App implements IApp {
 	private _camera: PerspectiveCamera;
 	private _scene: Scene;
 	private _renderer: WebGLRenderer;
-	private _controls: OrbitControls;
+	private _controls: typeof OrbitControls;
 	private _container: HTMLElement | null;
 
 	constructor() {
@@ -20,6 +20,7 @@ export class App implements IApp {
 		this._renderer = new WebGLRenderer({ antialias: true });
 		this._controls = new OrbitControls(this._camera, this._renderer.domElement);
 		this._container = document.getElementById('app');
+		window.addEventListener('resize', this.handleWindowResize, { passive: true });
 
 		this._setOptions();
 		this._render();
